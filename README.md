@@ -13,7 +13,7 @@
 第一步
 
 ```bash
-npm install ztools-api-types --save-dev
+npm install @ztools-center/ztools-api-types --save-dev
 ```
 
 第二步 配置 tsconfig.json
@@ -21,7 +21,7 @@ npm install ztools-api-types --save-dev
 ```json
 {
   "compilerOptions": {
-    "types": ["ztools-api-types"]
+    "types": ["@ztools-center/ztools-api-types"]
   },
   "includes": [
     // 如果使用ts或者框架，请添加需要类型提示的文件范围
@@ -95,7 +95,7 @@ window.ipc = ipcRenderer;
 
 ```json
 {
-  "$schema": "./node_modules/ztools-api-types/resource/ztools.schema.json"
+  "$schema": "node_modules/@ztools-center/ztools-api-types/resource/ztools.schema.json"
 }
 ```
 
