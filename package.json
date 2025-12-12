@@ -1,7 +1,7 @@
 {
-  "name": "ztools-api-types",
+  "name": "@ztools-center/ztools-api-types",
   "version": "1.0.0",
-  "description": "ZTools Plugin API TypeScript Definitions (100% uTools Compatible)",
+  "description": "ZTools API 代码提示 （直接Copy uTools的，部分API未完成适配）",
   "main": "index.d.ts",
   "types": "index.d.ts",
   "files": [
