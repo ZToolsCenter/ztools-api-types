@@ -68,19 +68,31 @@
             "type": "array",
             "description": "该功能下可响应的命令集，支持 6 种类型，由 cmds 的类型或 cmds.type 决定。",
             "items": {
-              "type": ["string", "object"],
+              "type": [
+                "string",
+                "object"
+              ],
               "properties": {
                 "type": {
                   "type": "string",
                   "description": "类型",
-                  "enum": ["regex", "over", "img", "files", "window"]
+                  "enum": [
+                    "regex",
+                    "over",
+                    "img",
+                    "files",
+                    "window"
+                  ]
                 },
                 "label": {
                   "type": "string",
                   "description": "关键字"
                 },
                 "match": {
-                  "type": ["string", "object"],
+                  "type": [
+                    "string",
+                    "object"
+                  ],
                   "description": "匹配模式",
                   "properties": {
                     "app": {
@@ -108,7 +120,10 @@
                 "fileType": {
                   "type": "string",
                   "description": "文件类型",
-                  "enum": ["file", "directory"]
+                  "enum": [
+                    "file",
+                    "directory"
+                  ]
                 },
                 "extensions": {
                   "type": "array",
