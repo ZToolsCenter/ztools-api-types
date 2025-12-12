@@ -1,24 +1,24 @@
 /// <reference path="ubw.d.ts"/>
 /// <reference path="electron.d.ts"/>
 
-interface UtoolsAiModel {
+interface ZToolsAiModel {
   id: string
   label: string
   description: string
   icon: string
   cost: number
 }
-interface UtoolsAiResult<T> extends Promise<T> {
+interface ZToolsAiResult<T> extends Promise<T> {
   abort(): void
 }
 
-interface UtoolsAiMessage {
+interface ZToolsAiMessage {
   role: 'system' | 'user' | 'assistant'
   content?: string
   reasoning_content?: string
 }
 
-interface UtoolsAiTool {
+interface ZToolsAiTool {
   type: 'function'
   function?: {
     name: string
@@ -31,10 +31,10 @@ interface UtoolsAiTool {
   }
 }
 
-interface UtoolsAiOption {
+interface ZToolsAiOption {
   model?: string
-  messages: UtoolsAiMessage[]
-  tools?: UtoolsAiTool[]
+  messages: ZToolsAiMessage[]
+  tools?: ZToolsAiTool[]
 }
 
 interface CookieFilter {
@@ -64,11 +64,11 @@ interface UBrowser {
    */
   viewport(width: number, height: number): this
   /**
-   * 隐藏 ubrowser 窗口
+   * 隐藏 zbrowser 窗口
    */
   hide(): this
   /**
-   * 显示 ubrowser 窗口
+   * 显示 zbrowser 窗口
    */
   show(): this
   /**
@@ -122,7 +122,7 @@ interface UBrowser {
    */
   cookies(name?: string): this
   /**
-   * 根据条件获取 ubrowser cookies
+   * 根据条件获取 zbrowser cookies
    * @param filter 条件过滤对象
    */
   cookies(filter: CookieFilter): this
@@ -237,7 +237,7 @@ interface UBrowser {
    */
   download(func: (...params: any[]) => string, savePath: string | null, ...params: any[]): this
   /**
-   * 启动一个 ubrowser 运行
+   * 启动一个 zbrowser 运行
    * 当运行结束后，窗口如果为隐藏状态将自动销毁窗口
    * @param options
    */
@@ -272,10 +272,10 @@ interface UBrowser {
     thickFrame?: boolean
   }): Promise<T>
   /**
-   * 运行在闲置的 ubrowser 上
-   * @param ubrowserId 1. run(options) 运行结束后, 当 ubrowser 实例窗口仍然显示时返回 2. utools.getIdleUBrowsers() 中获得
+   * 运行在闲置的 zbrowser 上
+   * @param zbrowserId 1. run(options) 运行结束后, 当 zbrowser 实例窗口仍然显示时返回 2. ztools.getIdleUBrowsers() 中获得
    */
-  run<T extends any = any[]>(ubrowserId: number): Promise<T>
+  run<T extends any = any[]>(zbrowserId: number): Promise<T>
 }
 
 interface Display {
@@ -557,11 +557,11 @@ interface UToolsApi {
    */
   redirectAiModelsSetting(): void
   /**
-   * 获取闲置的 ubrowser
+   * 获取闲置的 zbrowser
    */
   getIdleUBrowsers(): { id: number; title: string; url: string }[]
   /**
-   * 设置 ubrowser 代理 https://www.electronjs.org/docs/api/session#sessetproxyconfig
+   * 设置 zbrowser 代理 https://www.electronjs.org/docs/api/session#sessetproxyconfig
    */
   setUBrowserProxy(config: {
     pacScript?: string
@@ -569,7 +569,7 @@ interface UToolsApi {
     proxyBypassRules?: string
   }): boolean
   /**
-   * 清空 ubrowser 缓存
+   * 清空 zbrowser 缓存
    */
   clearUBrowserCache(): boolean
   /**
@@ -992,7 +992,7 @@ interface UToolsApi {
     allPresets(): Promise<{ key: string; value: any }[]>
   }
 
-  ubrowser: UBrowser
+  zbrowser: UBrowser
 
   /**
    * 运行 ffmpeg
@@ -1004,7 +1004,7 @@ interface UToolsApi {
   /**
    * 获取所有 AI 模型
    */
-  allAiModels(): Promise<UtoolsAiModel[]>
+  allAiModels(): Promise<ZToolsAiModel[]>
 
   /**
    * 流式调用 AI
@@ -1014,12 +1014,12 @@ interface UToolsApi {
    * @param option.tools 工具集合，使用 function calling 配置
    * @param streamCallback 流式回调
    */
-  ai(option: UtoolsAiOption, streamCallback: (chunk: UtoolsAiMessage) => void): UtoolsAiResult<void>
+  ai(option: ZToolsAiOption, streamCallback: (chunk: ZToolsAiMessage) => void): ZToolsAiResult<void>
   /**
    * 非流式调用 AI
    * @param option 选项参数
    */
-  ai(option: UtoolsAiOption): UtoolsAiResult<UtoolsAiMessage>
+  ai(option: ZToolsAiOption): ZToolsAiResult<ZToolsAiMessage>
 }
 
-declare var utools: UToolsApi
+declare var ztools: UToolsApi

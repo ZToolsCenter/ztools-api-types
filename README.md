@@ -4,11 +4,11 @@
 
 - [ztools.api.d.ts](./ztools.api.d.ts) `window.ztools` 对象类型提示
 - [electron.d.ts](./electron.d.ts) preload 内 `electron` 模块导入提示
-- [resource/utools.schema](./resource/ztools.schema.json) 配置文件 JSON Schema
+- [resource/ztools.schema](./resource/ztools.schema.json) 配置文件 JSON Schema
 
 ## `window.ztools` 对象类型提示
 
-目前将 utools 挂载到全局 window 下，提供在渲染层跟 preload 层的群体代码提示
+目前将 ztools 挂载到全局 window 下，提供在渲染层跟 preload 层的群体代码提示
 
 第一步
 
@@ -41,8 +41,8 @@ window.ztools.shellOpenExternal('https://u.tools')
 // 在资源管理器中显示文件
 window.ztools.shellShowItemInFolder('d:\\test')
 
-// ubrowser 网页自动化
-window.ztools.ubrowser
+// zbrowser 网页自动化
+window.ztools.zbrowser
   .goto('https://cn.bing.com')
   .value('#sb_form_q', 'ZTools')
   .click('#sb_form_go')
