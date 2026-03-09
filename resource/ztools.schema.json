@@ -36,6 +36,10 @@
         "height": {
           "type": "number",
           "description": "插件应用高度。可动态修改（参考），该项被设置后，用户则不能再调整高度。最小值为 1 。"
+        },
+        "backgroundRunning": {
+          "type": "boolean",
+          "description": "插件在后台时是否保持全速运行（默认 false）。设为 true 时，插件隐藏到后台后定时器和动画不会被节流，适用于需要后台定时任务的插件。"
         }
       }
     },
