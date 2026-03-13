@@ -1,6 +1,6 @@
 {
   "name": "@ztools-center/ztools-api-types",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "ZTools API 代码提示 （直接Copy uTools的，部分API未完成适配）",
   "main": "index.d.ts",
   "types": "index.d.ts",
@@ -33,7 +33,7 @@
     "url": "https://github.com/ZToolsCenter/ZTools/issues"
   },
   "homepage": "https://github.com/ZToolsCenter/ZTools/tree/main/ztools-api-types",
-  "utools-version": "7.2.0",
-  "utools-commit": "22df3aa",
-  "sync-date": "2025-12-12"
+  "utools-version": "7.5.1",
+  "utools-commit": "8066c26",
+  "sync-date": "2026-03-08"
 }
