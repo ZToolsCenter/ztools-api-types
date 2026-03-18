@@ -531,6 +531,11 @@ interface FfmpegRunProgress {
   time: string;
 }
 
+interface FfmpegRunOptions {
+  onProgress?: (progress: FfmpegRunProgress) => void;
+  onLog?: (text: string) => void;
+}
+
 interface FfmpegPromise extends Promise<void> {
   kill(): void;
   quit(): void;
@@ -1070,9 +1075,9 @@ interface ZToolsApi {
   /**
    * 运行 ffmpeg
    * @param args ffmpeg 命令行参数
-   * @param onProgress 进度回调
+   * @param options 进度回调函数（兼容旧版）或选项对象 { onProgress, onLog }
    */
-  runFFmpeg(args: string[], onProgress?: (progress: FfmpegRunProgress) => void): FfmpegPromise;
+  runFFmpeg(args: string[], options?: ((progress: FfmpegRunProgress) => void) | FfmpegRunOptions): FfmpegPromise;
 
   /**
    * 获取所有 AI 模型
